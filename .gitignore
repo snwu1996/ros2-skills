@@ -1,0 +1,25 @@
+# IDE and OS
+.vscode/
+.DS_Store
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+
+# Claude Code local settings (machine-specific, not for sharing)
+.claude/settings.local.json
+
+# Claude project memory and conversation history
+.claude/projects/
+
+# Build artifacts (if any scripts are added later)
+build/
+dist/
