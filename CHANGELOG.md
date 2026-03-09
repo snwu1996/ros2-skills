@@ -7,14 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- `/ros2-launch` — run a ROS2 launch file by package+name or direct file path; launches in background, waits for nodes to come up, detects startup errors, reports active nodes and topics
-- `/ros2-run` — run a single node standalone by package+executable or direct Python script path; supports remappings, parameters, params-file, namespace, background mode, and startup error diagnosis
-
 ### Planned
 - `/ros2-moveit-setup` — scaffold MoveIt2 configuration for a manipulator
-- `/ros2-perf` — profile CPU/memory usage of a running node, identify bottlenecks
 - `/ros2-security` — set up SROS2 keys, certificates, and policy files
+
+---
+
+## [1.3.0] - 2026-03-08
+
+### Added
+
+**Workspace Management (2):**
+- `/ros2-workspace` — scaffold a new ROS2 workspace with `src/`, `.colcon/defaults.yaml` (symlink-install), `colcon.meta` (RelWithDebInfo), `.gitignore`, README, and git init
+- `/ros2-clean` — clean `build/`, `install/`, `log/` directories per-package or entirely; shows disk usage before/after; warns when install/ is sourced
+
+**Testing (1):**
+- `/ros2-test` — run `colcon test` for one or more packages; parse pytest XML and gtest XML; display per-failure details with file:line; `--rerun-failed` flag
+
+**Debugging & Inspection (3):**
+- `/ros2-log` — view and filter ROS2 logs from `~/.ros/log/`; filter by severity, node name, or pattern; `--list` sessions; `--search` across sessions; highlights common error patterns with fix suggestions
+- `/ros2-pkg-info` — inspect any installed ROS2 package: share directory, executables, launch files with listed arguments, config files, interfaces, and mesh assets
+- `/ros2-perf` — profile a running node's CPU% and RSS/VSZ memory over time; detect memory growth; measure topic rates and header-stamp latency; `--cpu`, `--mem`, `--latency`
+
+**Runtime & Execution (2):**
+- `/ros2-launch` — run a ROS2 launch file by package+name or direct file path; stream output, detect startup errors, verify nodes came up
+- `/ros2-run` — run a single node standalone by package+executable or direct Python script path; supports remappings, parameters, background mode, startup error diagnosis
+
+**Simulation & Infrastructure (3):**
+- `/ros2-gazebo` — launch Gazebo Classic (Humble) or Gazebo Harmonic (Iron/Jazzy); spawn a robot from URDF/Xacro; `--headless`, `--paused`; verify essential topics after spawn
+- `/ros2-sim-time` — inspect `use_sim_time` on all running nodes; detect clock mismatches; `--enable`/`--disable` sets the parameter live; explains extrapolation bugs
+- `/ros2-domain` — show `ROS_DOMAIN_ID` status; `--scan` domains 0–50 for active nodes; `--set` with session and permanent instructions; `--isolate` generates multi-robot env files and `domain_bridge` config
 
 ---
 
@@ -86,7 +108,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/releases/tag/v1.0.0

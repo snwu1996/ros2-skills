@@ -22,6 +22,9 @@ ros2-claude-skills/
 │       ├── ros2-create-launch/  # Launch file generation
 │       ├── ros2-create-test/    # Test generation
 │       ├── ros2-launch-test/    # Launch testing
+│       ├── ros2-test/           # Run colcon tests + parse results
+│       ├── ros2-workspace/      # Scaffold new workspace
+│       ├── ros2-clean/          # Clean build/install/log artifacts
 │       ├── ros2-param/          # Parameter management
 │       ├── ros2-pub/            # Topic publishing
 │       ├── ros2-sub/            # Topic subscribing
@@ -41,7 +44,15 @@ ros2-claude-skills/
 │       ├── ros2-docker/         # Dockerfile generation
 │       ├── ros2-rosdep/         # rosdep dependency installer
 │       ├── ros2-nav2-setup/     # Nav2 configuration scaffold
-│       └── ros2-bag/            # Bag record / play / info
+│       ├── ros2-bag/            # Bag record / play / info
+│       ├── ros2-launch/         # Run a launch file
+│       ├── ros2-run/            # Run a single node standalone
+│       ├── ros2-log/            # View and filter ~/.ros/log/ logs
+│       ├── ros2-pkg-info/       # Inspect installed packages
+│       ├── ros2-perf/           # CPU/memory/latency profiling
+│       ├── ros2-gazebo/         # Launch Gazebo + spawn robot
+│       ├── ros2-sim-time/       # Manage use_sim_time
+│       └── ros2-domain/         # Manage ROS_DOMAIN_ID
 ├── templates/
 │   └── skill-template.md        # Template for new skills
 ├── .github/
@@ -120,5 +131,5 @@ Skills are tested manually with Claude Code:
 ---
 
 **Last Updated:** March 2026
-**Version:** v1.2.0
-**Skills:** 28 production-ready ROS2 skills
+**Version:** v1.3.0
+**Skills:** 39 production-ready ROS2 skills

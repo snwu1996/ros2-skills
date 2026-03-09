@@ -1,9 +1,9 @@
 # ros2-claude-skills
 
-**28 production-ready Claude Code skills for ROS2 development** — covering the full robot software lifecycle from package scaffolding and node generation to runtime debugging, TF inspection, QoS diagnostics, Nav2 setup, bag recording, and more.
+**39 production-ready Claude Code skills for ROS2 development** — covering the full robot software lifecycle from package scaffolding and node generation to runtime debugging, TF inspection, QoS diagnostics, Nav2 setup, bag recording, Gazebo simulation, performance profiling, and more.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-28-brightgreen.svg)](#skills)
+[![Skills](https://img.shields.io/badge/Skills-39-brightgreen.svg)](#skills)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble%20%7C%20Iron%20%7C%20Jazzy-blue.svg)](https://docs.ros.org)
 
 ---
@@ -52,6 +52,8 @@ See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, a
 | `/ros2-build` | `/ros2-build [packages] [--symlink-install] [--cmake-args ...]` | Build with colcon, detect errors, and suggest fixes |
 | `/ros2-add-dep` | `/ros2-add-dep <dependency> [package_path]` | Add a dependency to package.xml and CMakeLists.txt or setup.py |
 | `/ros2-rosdep` | `/ros2-rosdep [path] [--update] [--fix] [--check-only]` | Install ROS2 dependencies via rosdep, fix common failures |
+| `/ros2-workspace` | `/ros2-workspace <name> [--path dir] [--no-git] [--vcs-file repos.yaml]` | Scaffold a new workspace with colcon config, .gitignore, and git init |
+| `/ros2-clean` | `/ros2-clean [packages] [--build] [--install] [--log] [--all] [--dry-run]` | Clean build/install/log artifacts per-package or entirely |
 
 ### Testing
 
@@ -59,6 +61,7 @@ See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, a
 |---|---|---|
 | `/ros2-create-test` | `/ros2-create-test <node_or_file> [pytest\|gtest] [--unit\|--integration]` | Generate pytest or gtest unit/integration tests |
 | `/ros2-launch-test` | `/ros2-launch-test <launch_file> [--topic ...] [--service ...] [--tf ...] [--param ...]` | Generate launch_testing bringup validation tests |
+| `/ros2-test` | `/ros2-test [packages] [--pytest] [--gtest] [--rerun-failed] [--verbose]` | Run colcon test and parse pytest/gtest results with per-failure details |
 
 ### Debugging & Inspection
 
@@ -70,6 +73,9 @@ See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, a
 | `/ros2-diag` | `/ros2-diag [--duration sec] [--filter name] [--errors-only] [--watch]` | Monitor /diagnostics and render a live hardware health dashboard |
 | `/ros2-qos` | `/ros2-qos <topic> [--set publisher\|subscriber] [--explain]` | Diagnose QoS mismatches, explain incompatibilities, generate fix code |
 | `/ros2-urdf-check` | `/ros2-urdf-check <file.urdf\|file.xacro> [--tree] [--joints] [--meshes]` | Validate URDF/Xacro — check link/joint consistency, missing meshes |
+| `/ros2-log` | `/ros2-log [node_name] [--level warn\|error] [--session N] [--search pattern] [--list]` | View and filter ROS2 logs from ~/.ros/log/ by severity, node, or pattern |
+| `/ros2-pkg-info` | `/ros2-pkg-info <package_name> [--executables] [--launches] [--interfaces] [--path]` | Inspect an installed package — executables, launch files, interfaces, meshes |
+| `/ros2-perf` | `/ros2-perf <node_name> [--duration sec] [--topics] [--latency topic] [--cpu] [--mem]` | Profile CPU/memory usage, topic rates, and message latency for a running node |
 
 ### Configuration & Setup
 
@@ -81,6 +87,9 @@ See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, a
 | `/ros2-remap` | `/ros2-remap <from_topic> <to_topic> [node] [--launch file] [--find]` | Generate remapping syntax for CLI and launch files, find all topic uses |
 | `/ros2-nav2-setup` | `/ros2-nav2-setup [diff_drive\|omnidirectional\|ackermann] [path] [--slam]` | Scaffold Nav2 params.yaml, bringup launch, and costmap configuration |
 | `/ros2-docker` | `/ros2-docker [path] [--distro humble\|iron\|jazzy] [--multi-stage] [--gpu]` | Generate Dockerfile, entrypoint, .dockerignore, and Docker Compose |
+| `/ros2-domain` | `/ros2-domain [--status] [--scan] [--set ID] [--list] [--isolate robot:ID ...]` | Manage ROS_DOMAIN_ID — show status, scan domains, isolate robots |
+| `/ros2-sim-time` | `/ros2-sim-time [--enable] [--disable] [--status] [--node node_name]` | Check/set use_sim_time across nodes, detect clock-source mismatches |
+| `/ros2-gazebo` | `/ros2-gazebo [world_file] [--urdf file] [--spawn-at x y z] [--gz] [--headless]` | Launch Gazebo Classic or Harmonic and optionally spawn a robot |
 
 ### Topics, Services & Actions
 
@@ -158,6 +167,30 @@ See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, a
 
 # Inspect a bag
 /ros2-bag info rosbag2_2024_01_15/
+
+# Create a new workspace
+/ros2-workspace my_robot_ws
+
+# Run colcon tests and get per-failure details
+/ros2-test my_pkg --rerun-failed
+
+# View WARN+ logs for a node
+/ros2-log camera_driver --level warn
+
+# Inspect an installed package
+/ros2-pkg-info nav2_bringup --launches
+
+# Profile a running node
+/ros2-perf /move_base --duration 30 --topics
+
+# Check and fix sim-time mismatches
+/ros2-sim-time --status
+
+# Scan for active ROS2 domains on the network
+/ros2-domain --scan
+
+# Launch Gazebo with a world and spawn a robot
+/ros2-gazebo my_world.world --urdf robot.xacro --spawn-at 0 0 0.5
 ```
 
 ---
