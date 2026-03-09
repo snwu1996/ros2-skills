@@ -29,8 +29,18 @@ ros2-claude-skills/
 │       ├── ros2-send-action/    # Action goals (send new goal)
 │       ├── ros2-monitor-action/ # Action feedback monitoring (in-flight)
 │       ├── ros2-debug-node/     # Node inspection & issue detection
+│       ├── ros2-node-graph/     # Computation graph visualization
 │       ├── ros2-check-tf/       # TF tree validation
+│       ├── ros2-diag/           # /diagnostics health dashboard
+│       ├── ros2-qos/            # QoS mismatch diagnostics
 │       ├── ros2-lifecycle/      # Lifecycle node management
+│       ├── ros2-gen-params/     # Parameter YAML generation
+│       ├── ros2-remap/          # Topic remapping helper
+│       ├── ros2-urdf-check/     # URDF/Xacro validation
+│       ├── ros2-compose/        # Composable node setup
+│       ├── ros2-docker/         # Dockerfile generation
+│       ├── ros2-rosdep/         # rosdep dependency installer
+│       ├── ros2-nav2-setup/     # Nav2 configuration scaffold
 │       └── ros2-bag/            # Bag record / play / info
 ├── templates/
 │   └── skill-template.md        # Template for new skills
@@ -110,5 +120,5 @@ Skills are tested manually with Claude Code:
 ---
 
 **Last Updated:** March 2026
-**Version:** v1.1.0
-**Skills:** 18 production-ready ROS2 skills
+**Version:** v1.2.0
+**Skills:** 28 production-ready ROS2 skills

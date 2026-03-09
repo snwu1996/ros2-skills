@@ -7,11 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `/ros2-launch` — run a ROS2 launch file by package+name or direct file path; launches in background, waits for nodes to come up, detects startup errors, reports active nodes and topics
+- `/ros2-run` — run a single node standalone by package+executable or direct Python script path; supports remappings, parameters, params-file, namespace, background mode, and startup error diagnosis
+
 ### Planned
-- `/ros2-gen-params` — generate parameter YAML files from node introspection
-- `/ros2-nav2-setup` — scaffold Nav2 configuration for a robot
-- `/ros2-moveit-setup` — scaffold MoveIt2 configuration
-- `/ros2-urdf-check` — validate URDF/Xacro files and check joint/link structure
+- `/ros2-moveit-setup` — scaffold MoveIt2 configuration for a manipulator
+- `/ros2-perf` — profile CPU/memory usage of a running node, identify bottlenecks
+- `/ros2-security` — set up SROS2 keys, certificates, and policy files
+
+---
+
+## [1.2.0] - 2026-03-08
+
+### Added
+
+**Diagnostics & Observability (3):**
+- `/ros2-node-graph` — render the full ROS2 computation graph as text; detect orphaned nodes, isolated subgraphs, multiple publishers on the same topic
+- `/ros2-diag` — subscribe to `/diagnostics`, parse `DiagnosticArray` messages, and display a live OK/WARN/ERROR/STALE health dashboard per hardware component
+- `/ros2-qos` — diagnose QoS mismatches between publishers and subscribers; explain incompatibilities in plain English; generate Python and C++ fix code
+
+**Code & Config Generation (4):**
+- `/ros2-gen-params` — generate a parameter YAML file from a running node's current values; supports template mode with type annotations and comments
+- `/ros2-compose` — register a C++ class as a composable node component; update CMakeLists.txt and generate a component container launch file
+- `/ros2-docker` — generate a Dockerfile, entrypoint script, `.dockerignore`, and Docker Compose file; supports multi-stage builds and NVIDIA GPU
+- `/ros2-nav2-setup` — scaffold `nav2_params.yaml` with full defaults for differential/omnidirectional/Ackermann robots, plus a bringup launch file
+
+**Robot Model (1):**
+- `/ros2-urdf-check` — validate URDF/Xacro files; check joint/link consistency, detect missing meshes, display link tree, flag common errors
+
+**Integration & Deployment (2):**
+- `/ros2-rosdep` — run `rosdep install`, fix common failures (missing keys, OS mismatches, permission errors), update the database
+- `/ros2-remap` — generate remapping syntax for CLI and launch files; search workspace for all uses of a topic
 
 ---
 
@@ -59,6 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/YOUR_USERNAME/ros2-claude-skills/releases/tag/v1.0.0
