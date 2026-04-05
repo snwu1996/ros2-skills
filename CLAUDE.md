@@ -11,7 +11,7 @@ This is a **ROS2 skills library** for Claude Code — reusable, production-ready
 ## Repository Structure
 
 ```
-ros2-claude-skills/
+ros2-skills/
 ├── .claude/
 │   └── skills/                  # All skills live here
 │       ├── ros2-create-pkg/     # Package scaffolding

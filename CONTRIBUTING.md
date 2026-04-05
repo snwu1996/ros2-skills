@@ -1,4 +1,4 @@
-# Contributing to ros2-claude-skills
+# Contributing to ros2-skills
 
 Thank you for your interest in contributing! This repository aims to give Claude Code deep, production-ready ROS2 expertise through modular skill packages.
 

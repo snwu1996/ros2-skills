@@ -1,6 +1,6 @@
 # Installation Guide
 
-Complete installation guide for ros2-claude-skills — 18 ROS2 skills for Claude Code.
+Complete installation guide for ros2-skills — 18 ROS2 skills for Claude Code.
 
 ## Prerequisites
 
@@ -34,11 +34,11 @@ Skills are available in every Claude Code session, regardless of which directory
 
 ```bash
 # Clone anywhere
-git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-claude-skills
+git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-skills
 
 # Copy into user-level Claude config
 mkdir -p ~/.claude/skills
-cp -r ~/ros2-claude-skills/.claude/skills/* ~/.claude/skills/
+cp -r ~/ros2-skills/.claude/skills/* ~/.claude/skills/
 ```
 
 ---
@@ -48,10 +48,10 @@ cp -r ~/ros2-claude-skills/.claude/skills/* ~/.claude/skills/
 Instead of copying, symlink each skill so `git pull` updates them automatically.
 
 ```bash
-git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-claude-skills
+git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-skills
 mkdir -p ~/.claude/skills
 
-for skill_dir in ~/ros2-claude-skills/.claude/skills/*/; do
+for skill_dir in ~/ros2-skills/.claude/skills/*/; do
     skill_name=$(basename "$skill_dir")
     ln -sf "$skill_dir" ~/.claude/skills/"$skill_name"
 done
@@ -80,9 +80,9 @@ If you only want specific skills, copy just those directories:
 ```bash
 # Example: only install the debugging and inspection skills
 mkdir -p ~/.claude/skills
-cp -r ~/ros2-claude-skills/.claude/skills/ros2-debug-node ~/.claude/skills/
-cp -r ~/ros2-claude-skills/.claude/skills/ros2-check-tf ~/.claude/skills/
-cp -r ~/ros2-claude-skills/.claude/skills/ros2-lifecycle ~/.claude/skills/
+cp -r ~/ros2-skills/.claude/skills/ros2-debug-node ~/.claude/skills/
+cp -r ~/ros2-skills/.claude/skills/ros2-check-tf ~/.claude/skills/
+cp -r ~/ros2-skills/.claude/skills/ros2-lifecycle ~/.claude/skills/
 ```
 
 ---
@@ -92,7 +92,7 @@ cp -r ~/ros2-claude-skills/.claude/skills/ros2-lifecycle ~/.claude/skills/
 ### If you copied the files:
 
 ```bash
-cd ~/ros2-claude-skills
+cd ~/ros2-skills
 git pull
 cp -r .claude/skills/* ~/.claude/skills/
 ```
@@ -100,7 +100,7 @@ cp -r .claude/skills/* ~/.claude/skills/
 ### If you used symlinks:
 
 ```bash
-cd ~/ros2-claude-skills
+cd ~/ros2-skills
 git pull
 # Symlinks automatically point to updated files
 ```

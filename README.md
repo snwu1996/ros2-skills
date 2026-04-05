@@ -1,4 +1,4 @@
-# ros2-claude-skills
+# ros2-skills
 
 **39 production-ready Claude Code skills for ROS2 development** — covering the full robot software lifecycle from package scaffolding and node generation to runtime debugging, TF inspection, QoS diagnostics, Nav2 setup, bag recording, Gazebo simulation, performance profiling, and more.
 
@@ -22,9 +22,9 @@ cp -r .ros2-skills/.claude/skills/* .claude/skills/
 ### User-level (skills available in all Claude Code sessions)
 
 ```bash
-git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-claude-skills
+git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-skills
 mkdir -p ~/.claude/skills
-cp -r ~/ros2-claude-skills/.claude/skills/* ~/.claude/skills/
+cp -r ~/ros2-skills/.claude/skills/* ~/.claude/skills/
 ```
 
 See [INSTALLATION.md](INSTALLATION.md) for symlink install, per-skill install, and troubleshooting.
