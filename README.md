@@ -14,7 +14,7 @@
 
 ```bash
 cd ~/ros2_ws
-git clone https://github.com/YOUR_USERNAME/ros2-claude-skills.git .ros2-skills
+git clone git@github.com:snwu1996/ros2-skills.git .ros2-skills
 mkdir -p .claude/skills
 cp -r .ros2-skills/.claude/skills/* .claude/skills/
 ```
@@ -22,7 +22,7 @@ cp -r .ros2-skills/.claude/skills/* .claude/skills/
 ### User-level (skills available in all Claude Code sessions)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ros2-claude-skills.git ~/ros2-claude-skills
+git clone git@github.com:snwu1996/ros2-skills.git ~/ros2-claude-skills
 mkdir -p ~/.claude/skills
 cp -r ~/ros2-claude-skills/.claude/skills/* ~/.claude/skills/
 ```

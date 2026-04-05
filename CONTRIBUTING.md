@@ -48,9 +48,9 @@ Add skills for ROS2 workflows not yet covered:
 ### Fork and Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ros2-claude-skills.git
-cd ros2-claude-skills
-git remote add upstream https://github.com/YOUR_USERNAME/ros2-claude-skills.git
+git clone git@github.com:snwu1996/ros2-skills.git
+cd ros2-skills
+git remote add upstream git@github.com:snwu1996/ros2-skills.git
 ```
 
 ### Create a Branch
